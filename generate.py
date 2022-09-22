@@ -10,3 +10,6 @@ for i in range(0, textLengh):
     text = str(numpy.random.choice(train.dictionary.get(text), 1)[0])
 
 print(song)
+
+
+
