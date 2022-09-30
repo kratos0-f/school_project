@@ -1,14 +1,12 @@
 from tkinter import *
-import tkinter.filedialog
-
-
+from tkinter import filedialog
 def Quit(ev):
     global root
     root.destroy()
 
 
 def LoadFile(ev):
-    fn = tkFileDialog.Open(root, filetypes=[('*.txt files', '.txt')]).show()
+    fn = filedialog.Open(root, filetypes=[('*.txt files', '.txt')]).show()
     if fn == '':
         return
     textbox.delete('1.0', 'end')
@@ -16,12 +14,15 @@ def LoadFile(ev):
 
 
 def SaveFile(ev):
-    fn = tkFileDialog.SaveAs(root, filetypes=[('*.txt files', '.txt')]).show()
+    fn = filedialog.SaveAs(root, filetypes=[('*.txt files', '.txt')]).show()
     if fn == '':
         return
     if not fn.endswith(".txt"):
         fn += ".txt"
     open(fn, 'wt').write(textbox.get('1.0', 'end'))
+
+def start():
+    root.mainloop()
 
 
 root = Tk()
@@ -52,5 +53,3 @@ quitBtn.bind("<Button-1>", Quit)
 loadBtn.place(x=10, y=10, width=40, height=40)
 saveBtn.place(x=60, y=10, width=40, height=40)
 quitBtn.place(x=110, y=10, width=40, height=40)
-
-root.mainloop()

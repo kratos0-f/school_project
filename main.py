@@ -1,23 +1,15 @@
-from tkinter import *
+import tkinter as tk
 from tkinter import ttk
+import textEditorStarter
 
-def hello(event):
-    print("Hello, world!")
+window = tk.Tk()
 
-window = Tk()
-
-st = ttk.Style()
-st.configure("TButton", background="#345", foreground="red", font=("Arial", 14))
-
-btn = ttk.Button(
+texteditorBtn = tk.Button(
     window,
-    text="Hello, world!",
-    style="TButton"
+    text="Add new template",
+    #command=lambda: textEditorStarter.startEditor()
 )
 
-print(btn.configure().keys())
-
-btn.bind("<Button-1>", hello)
-btn.pack()
+texteditorBtn.pack()
 
 window.mainloop()
