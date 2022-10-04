@@ -2,7 +2,7 @@ import tkinter as tk
 import os
 from modules.textEditor import main_loop
 
-def func():
+def openFile():
     print("Hello, world!")
 
 window = tk.Tk()
@@ -26,7 +26,7 @@ for i in filename_tuple:
     fileBtn = tk.Button(
         frame,
         text=i,
-        command=func
+        command=openFile
     )
     fileBtn.pack(side=tk.BOTTOM)
 
