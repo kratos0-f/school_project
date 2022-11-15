@@ -4,7 +4,7 @@ import argparse
 import codecs
 import re
 
-#args logic
+# логика аргументов cmd
 parser = argparse.ArgumentParser(description='song writer')
 parser.add_argument(
     'variation',
@@ -20,20 +20,19 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-#reading data
+# считывание данных
 text = codecs.open("data/"+str(args.variation)+".txt", 'r', 'utf-8').read()
 
-#data processing
+# обработка данных
 pattern = re.compile('[\W_]+')
 clean_text = pattern.sub(' ', text)
 clean_text = clean_text.lower()
 words = clean_text.split()
 
-#train model
+# обучение модели
 dictionary = dict.fromkeys(words, [])
 for i in range(0, len(words) - 1):
     dictionary[words[i]] = dictionary[words[i]] + words[i+1].split()
 
 dictionary[words[len(words)-1]] = dictionary[words[len(words)-1]] + words[0].split()
 
-#print(dictionary)
