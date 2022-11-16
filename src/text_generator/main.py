@@ -1,7 +1,8 @@
 import logging
+import TOKEN
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '5702323388:AAEUAHBVYF1oN9Gma-fwLDpV24XnMgjrv8U'
+API_TOKEN = TOKEN._TOKEN
 logging.basicConfig(level=logging.INFO)  # Initialize bot and dispatcher
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
