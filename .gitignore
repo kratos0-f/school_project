@@ -1,2 +1,5 @@
+# ignore idea folder
 /.idea
-/src/text_generator/TOKEN.py
+
+# ignore file with token
+TOKEN.py
